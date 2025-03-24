@@ -1,8 +1,8 @@
-# Titanic Survivor Predictor 🛳️
+# Você teria sobrevivido ao Titanic?  
 
-Este é um projeto interativo em Python que usa um modelo de machine learning para prever se você sobreviveria ao naufrágio do Titanic, com base em dados reais de 1912. A experiência inclui arte em ASCII e perguntas no terminal.
+Este é um projeto baseado no desafio do Kaggle, com a base de dados dos passageiros do Titanic. Esse projeto é uma variação dele, interativo em Python que usa um modelo de machine learning para prever se você sobreviveria ao naufrágio do Titanic, com base em dados reais de 1912. A experiência inclui arte em ASCII e perguntas no terminal.
 
-## 📂 Estrutura do Projeto
+## Estrutura do Projeto
 
 previsao-sobrevivencia-titanic/
 ├── data/
@@ -12,7 +12,7 @@ previsao-sobrevivencia-titanic/
 ├── README.md
 ├── requirements.txt
 
-## 🚀 Como Rodar
+## Como Rodar?
 
 1. Clone este repositório:
 ```bash
@@ -23,7 +23,7 @@ cd previsao-sobrevivencia-titanic
 
 pip install -r requirements.txt
 
-3. Treine o modelo:
+## Treine o modelo:
 
 python3 src/train_model.py
 
@@ -31,7 +31,7 @@ python3 src/train_model.py
 
 python3 src/predict_user.py
 
-🧠 Modelo
+## Modelo
 O modelo é um RandomForestClassifier, treinado com os seguintes dados:
 
 Classe (1ª, 2ª ou 3ª)
@@ -48,12 +48,12 @@ Sexo
 
 Porto de embarque
 
-🎨 Detalhes extras
+## Detalhes extras
 Arte em ASCII ao iniciar a experiência.
 
 Resposta final com desenho temático dependendo da previsão: ☀️ se sobreviveu, ☠️ se não.
 
-📦 Requisitos
+## Requisitos
 Python 3.8 ou superior
 
 pandas
