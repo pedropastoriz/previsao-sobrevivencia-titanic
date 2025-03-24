@@ -15,7 +15,7 @@ previsao-sobrevivencia-titanic/
 ## Como Rodar?
 
 1. Clone este repositório:
-```bash
+
 git clone https://github.com/seu-usuario/previsao-sobrevivencia-titanic.git
 cd previsao-sobrevivencia-titanic
 
