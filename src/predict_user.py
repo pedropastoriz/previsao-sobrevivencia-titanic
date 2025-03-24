@@ -3,8 +3,68 @@
 import numpy as np
 import joblib
 
-print("=== Você sobreviveria ao Titanic? Descubra! ===")
+# Códigos ANSI para cor
+BLUE = '\033[94m'
+CYAN = '\033[96m'
+YELLOW = '\033[93m'
+GREEN = '\033[92m'
+RED = '\033[91m'
+RESET = '\033[0m'
+BOLD = '\033[1m'
 
+# Titanic em ASCII
+titanic_ascii = f"""{BLUE}
+          |    |    |
+         )_)  )_)  )_)
+        )___))___))___)\\
+       )____)____)_____)\\\\
+     _____|____|____|____\\\\\\__
+-----\                   /-----
+  ^^^^^ ^^^^^^^^^^^^^^^^^^^^^
+    ^^^^      ^^^^     ^^^    ^^
+         ^^^^      ^^^
+{RESET}"""
+
+# Iceberg em ASCII
+iceberg_ascii = f"""{CYAN}
+               .    .
+              / `.  `.     .
+             /  `. `. `.  /|
+            |    `. `. `.| |
+            |      `. `.| |
+            |        `..  |
+            |          |  |
+            |          |  |
+           /           |  |
+          /            |  |
+         /_____________|__|
+{RESET}"""
+
+# Solzinho (sobreviveu)
+sun_ascii = f"""{YELLOW}
+       \\   |   /
+         .-*-.
+      ---( ☀ )---
+         `-*-’
+       /   |   \\
+{RESET}"""
+
+# Caveira com cruz (não sobreviveu)
+skull_ascii = f"""{RED}
+       †
+      ☠ ☠
+     (x__x)
+      /||\\
+       ||
+      /  \\
+{RESET}"""
+
+# Início
+print(f"{BOLD}=== Você sobreviveria ao Titanic? Descubra! ==={RESET}")
+print(titanic_ascii)
+print(iceberg_ascii)
+
+# Coleta de dados
 pclass = int(input("Classe (1 = 1ª classe, 2 = 2ª, 3 = 3ª): "))
 age = int(input("Idade: "))
 sibsp = int(input("Número de irmãos/cônjuges a bordo: "))
@@ -20,8 +80,14 @@ S = 1 if embarked == 'S' else 0
 
 user_data = np.array([pclass, age, sibsp, parch, fare, male, Q, S]).reshape(1, -1)
 
+# Previsão
 model = joblib.load('src/titanic_model.pkl')
 prediction = model.predict(user_data)[0]
 
-resultado = "Você ganhou mais um dia de vida, aproveite! Sobreviveu ao Titanic!" if prediction == 1 else "Você virou uma camiseta de saudades eternas. Não sobreviveu."
-print(f"\nResultado: {resultado}")
+# Resultado
+if prediction == 1:
+    print(f"\n{GREEN}{BOLD}Você ganhou mais um dia de vida, aproveite! Sobreviveu ao Titanic!{RESET}")
+    print(sun_ascii)
+else:
+    print(f"\n{RED}{BOLD}Você virou uma camiseta de saudades eternas. Não sobreviveu.{RESET}")
+    print(skull_ascii)
