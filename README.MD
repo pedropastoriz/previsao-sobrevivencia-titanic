@@ -16,7 +16,7 @@ previsao-sobrevivencia-titanic/
 
 1. Clone este repositório:
 
-git clone https://github.com/seu-usuario/previsao-sobrevivencia-titanic.git
+git clone https://github.com/pedropastoriz/previsao-sobrevivencia-titanic
 cd previsao-sobrevivencia-titanic
 
 2. Instale os pacotes necessários (recomenda-se usar um ambiente virtual):
